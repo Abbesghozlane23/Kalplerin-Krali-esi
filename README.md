@@ -39,16 +39,26 @@
 
     /* القلب العائم */
     .floating-heart {
+      width: 100px;
+      height: 90px;
+      position: absolute;
+      z-index: 2;
+      animation: pulse 1s infinite;
+    }
+
+    /* الجزء الأول من القلب (دائرة اليسار) */
+    .floating-heart::before {
+      content: "";
+      position: absolute;
       width: 50px;
       height: 50px;
       background-color: red;
-      position: absolute;
       border-radius: 50%;
-      animation: pulse 1s infinite;
-      z-index: 2;
+      top: 0;
+      left: 0;
     }
 
-    .floating-heart::before,
+    /* الجزء الثاني من القلب (دائرة اليمين) */
     .floating-heart::after {
       content: "";
       position: absolute;
@@ -56,18 +66,14 @@
       height: 50px;
       background-color: red;
       border-radius: 50%;
+      top: 0;
+      right: 0;
     }
 
-    .floating-heart::before {
-      top: -25px;
-      left: 0;
-      transform: rotate(45deg);
-    }
-
-    .floating-heart::after {
-      top: -25px;
-      left: 25px;
-      transform: rotate(-45deg);
+    /* القاعدة السفلية للقلب */
+    .floating-heart {
+      background-color: red;
+      clip-path: polygon(50% 0%, 100% 100%, 0% 100%);
     }
 
     /* تأثير نبض القلب */
@@ -107,9 +113,9 @@
 
       // منع القلب من الخروج عن حدود الصفحة
       if (x < 0) x = 0;
-      if (x > window.innerWidth - 50) x = window.innerWidth - 50;
+      if (x > window.innerWidth - 100) x = window.innerWidth - 100;
       if (y < 0) y = 0;
-      if (y > window.innerHeight - 50) y = window.innerHeight - 50;
+      if (y > window.innerHeight - 90) y = window.innerHeight - 90;
 
       // تحديث موقع القلب
       heart.style.left = x + 'px';
