@@ -7,7 +7,7 @@
   <style>
     body {
       /* إضافة صورة خلفية معبرة عن الحب */
-      background-image: url('https://example.com/love-background.jpg'); /* استبدل الرابط بالصورة المناسبة */
+      background-image: url('https://www.pexels.com/tr-tr/fotograf/kalp-seklindeki-kirmizi-neon-tabela-887349/'); /* استبدل الرابط بالصورة المناسبة */
       background-size: cover; /* لتغطية كامل الشاشة */
       background-position: center; /* لتمركز الصورة */
       background-repeat: no-repeat; /* لمنع تكرار الصورة */
